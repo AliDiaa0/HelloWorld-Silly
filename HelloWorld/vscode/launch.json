@@ -1,0 +1,29 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run HelloWorld",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/release/Hello.exe",  // Path to your built EXE
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "miDebuggerPath": "C:/MinGW/bin/gdb.exe",  // Adjust this path to where MinGW's gdb is installed
+            "preLaunchTask": "Build HelloWorld",  // Make sure this matches the build task in tasks.json
+            "externalConsole": true,  // Open an external console when running the program
+            "windows": {
+                "MIMode": "gdb",
+                "miDebuggerPath": "C:/MinGW/bin/gdb.exe"  // Make sure gdb is in your MinGW bin directory
+            }
+        }
+    ]
+}
